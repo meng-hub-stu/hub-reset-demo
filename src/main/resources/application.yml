@@ -1,0 +1,60 @@
+server:
+  port: 8088
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0, ds1
+      ds0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/hub-shard-01?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+        username: root
+        password: root
+      ds1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/hub-shard-02?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+        username: root
+        password: root
+    sharding:
+      tables:
+        user:
+          actual-data-nodes: ds$->{0..1}.user$->{0..1}
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: user$->{id % 2}
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+      #结合表
+      binding-tables: user
+      #广播表
+      broadcast-tables: log
+      #默认数据库的策略
+      default-database-strategy:
+        inline:
+          sharding-column: age
+          algorithm-expression: ds$->{age % 2}
+      #默认表的策略
+      default-table-strategy:
+        inline:
+          sharding-column: id
+          algorithm-expression: user$->{id % 2}
+    props:
+      sql:
+        show: true
+
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:com/mdx/mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.mdx.pojo
+  type-enums-package: com.mdx.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 分页插件配置
+pagehelper:
+  helperDialect: mysql
+  supportMethodsArguments: true
