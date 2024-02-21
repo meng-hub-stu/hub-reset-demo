@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023/04/25
  */
 @SpringBootApplication
-@MapperScan({"com.mdx.mapper.**"})
+
 public class ApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
