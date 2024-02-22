@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -26,8 +27,9 @@ import java.util.List;
  */
 @SpringBootTest(classes = ApiApplication.class)
 @RunWith(SpringRunner.class)
+@ActiveProfiles("standard")
 @Slf4j
-public class UserControllerTest {
+public class ShardingTest {
 
     @Autowired
     private IUserService userService;
@@ -45,14 +47,16 @@ public class UserControllerTest {
 
     @Test
     public void queryUserList() {
-        List<User> list = userService.list(Wrappers.<User>lambdaQuery().eq(User::getAge, 20));
+//        List<User> list = userService.list(Wrappers.<User>lambdaQuery().in(User::getAge, 78, 90));
+        List<User> list = userService.list(Wrappers.<User>lambdaQuery().le(User::getId, 1760514399217020929L));
         log.info("查询的数据->{}", JSON.toJSONString(list));
     }
 
     @Test
     public void queryUserById() {
-        User user = userService.getById(10102);
-        log.info("查询的数据->{}", JSON.toJSONString(user));
+//        User user = userService.getById(10102);
+        List<User> users = userService.list(Wrappers.<User>lambdaQuery().in(User::getId, 1760241264743927810L, 1760241265188524035L));
+        log.info("查询的数据->{}", JSON.toJSONString(users));
     }
 
     @Test
