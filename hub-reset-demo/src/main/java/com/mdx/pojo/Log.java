@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @TableName(value = "hub_log")
 public class Log {
-
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
