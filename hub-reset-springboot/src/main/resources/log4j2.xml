@@ -60,7 +60,7 @@
         <!--            <appender-ref ref="ERROR" />-->
         <!--            <appender-ref ref="Console" />-->
         <!--        </AsyncLogger>-->
-<!--                <AsyncLogger name="com.mdx" level="debug" additivity="false">-->
+<!--                <AsyncLogger name="com.com.mdx" level="debug" additivity="false">-->
 <!--                    <appender-ref ref="RollingRandomAccessFile" />-->
 <!--                    <appender-ref ref="ERROR" />-->
 <!--                    <appender-ref ref="Console" />-->
