@@ -67,7 +67,7 @@
         false：表示只用当前logger的appender-ref，true：
          表示当前logger的appender-ref和rootLogger的appender-ref都有效
      -->
-    <logger name="com.alibaba" level="debug" additivity="false"/>
+    <logger name="com.alibaba" level="debug" additivity="true"/>
 
     <logger name="com.mdx" level="debug" additivity="true"/>
 

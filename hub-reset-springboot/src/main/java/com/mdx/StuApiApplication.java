@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2023/04/25
  */
 @SpringBootApplication
-public class SpringBootApiApplication {
+public class StuApiApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootApiApplication.class, args);
+        SpringApplication.run(StuApiApplication.class, args);
     }
 }

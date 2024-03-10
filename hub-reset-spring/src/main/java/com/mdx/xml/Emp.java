@@ -1,4 +1,4 @@
-package com.mdx.test;
+package com.mdx.xml;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
