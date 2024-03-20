@@ -1,7 +1,7 @@
 package com.mdx.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mdx.pojo.User;
+import com.mdx.User;
 
 /**
  * @author Mengdl

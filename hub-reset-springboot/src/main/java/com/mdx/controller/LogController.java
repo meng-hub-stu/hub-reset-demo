@@ -1,6 +1,6 @@
 package com.mdx.controller;
 
-import com.mdx.pojo.Log;
+import com.mdx.Log;
 import com.mdx.service.ILogService;
 import com.mdx.util.R;
 import lombok.AllArgsConstructor;

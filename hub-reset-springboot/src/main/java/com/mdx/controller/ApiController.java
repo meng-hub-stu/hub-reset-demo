@@ -2,7 +2,7 @@ package com.mdx.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.pagehelper.PageHelper;
-import com.mdx.pojo.User;
+import com.mdx.User;
 import com.mdx.service.IUserService;
 import com.mdx.util.PagedGridResult;
 import com.mdx.util.R;

@@ -2,7 +2,7 @@ package com.mdx.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mdx.mapper.LogMapper;
-import com.mdx.pojo.Log;
+import com.mdx.Log;
 import com.mdx.service.ILogService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

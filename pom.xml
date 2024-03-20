@@ -19,6 +19,8 @@
     <modules>
         <module>hub-reset-spring</module>
         <module>hub-reset-springboot</module>
+        <module>hub-reset-zuul</module>
+        <module>hub-reset-mybatis</module>
     </modules>
 
     <properties>

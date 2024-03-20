@@ -2,16 +2,13 @@ package com.mdx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * @author Mengdl
- * @date 2023/04/25
+ * 启动类
  */
 @SpringBootApplication
-@EnableAsync
-public class StuApiApplication {
+public class ZuulApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StuApiApplication.class, args);
+        SpringApplication.run(ZuulApplication.class, args);
     }
 }

@@ -14,6 +14,7 @@ import java.lang.reflect.Proxy;
 public class JdkProxy implements InvocationHandler {
 
     private Object target;
+
     public JdkProxy(Object target) {
         super();
         this.target = target;

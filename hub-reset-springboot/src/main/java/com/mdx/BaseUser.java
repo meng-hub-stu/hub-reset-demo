@@ -1,4 +1,4 @@
-package com.mdx.pojo;
+package com.mdx;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;

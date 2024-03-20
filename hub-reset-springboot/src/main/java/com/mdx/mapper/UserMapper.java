@@ -1,7 +1,7 @@
 package com.mdx.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mdx.pojo.User;
+import com.mdx.User;
 
 /**
  * @author Mengdl
